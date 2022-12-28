@@ -1,0 +1,91 @@
+{% if section.blocks.size > 0 %}
+  <div class="logolist container">
+    <div class="logolist__container">
+      <div class="heading__text">{{ section.settings.heading_text }}</div>
+      <div class="image__wrapper__container ">
+        {% for block in section.blocks %}
+          {% if block.settings.image_url != blank and block.settings.logo_image != blank %}
+            <div class="logolist__image__wrapper">
+              <a class="image__link" href="{{ block.settings.image_url }}"> 
+                {% render 'image', mobileSrc: block.settings.logo_image, desktopSrc: block.settings.logo_image %}
+              </a>
+            <div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% style %}
+  .heading__text{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    color: white;
+    font-weight: bold;
+  }
+  .logolist__image__wrapper{
+   display:flex;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap : wrap;
+  }
+  .logolist{
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 1400px;
+    background: #6c756c;
+  }
+  .image__link{
+    max-width: 110px;
+    margin:1rem;
+  }
+{% endstyle %}
+
+      
+{% schema %}
+{
+  "name": "Logo List",
+  "class": "logo_list_section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "placeholder": "Heading text",
+      "default": "AS SEEN IN",
+      "label" : "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Logo",
+      "name": "Logo list block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label" : "Image"
+        },
+        {
+          "type": "url",
+          "id": "image_url",
+          "label": "Logo url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo List"
+    }
+  ]
+}
+{% endschema %}
+
+
+
+{% javascript %}
+{% endjavascript %}

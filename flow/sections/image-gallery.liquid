@@ -1,0 +1,134 @@
+{% if section.blocks.size > 0 %}
+  <div class="image-gallery container">
+    <div class="flexbox">
+      {% for block in section.blocks %}
+        <div class="flexbox__item">
+          <div class="image-item">
+            <div class="image-item__image">
+              {% if block.settings.image != blank %}
+                {% assign mobile_image = block.settings.image_mobile | default: block.settings.image %}
+                {% render 'image', mobileSrc: mobile_image, desktopSrc: block.settings.image %}      
+              {% endif %}
+            </div>
+            <div class="image-item__content">
+              {% if block.settings.heading_text != blank %}
+                <h2 class="image-text__heading heading-{{ block.id }}">{{ block.settings.heading_text }}</h2>
+              {% endif %}
+      
+              {% if block.settings.paragraph_text != blank %}
+                <div class="image-text__paragraph paragraph-{{ block.id }}">{{ block.settings.paragraph_text }}</div>
+              {% endif %}
+      
+              {% if block.settings.button_text != blank and block.settings.button_link != blank %}
+                <div class="image-text__button">
+                  <a class="button button--primary button-{{ block.id }}" href="{{ block.settings.button_link }}">
+                    {{ block.settings.button_text }}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+
+
+{% style %}
+  {% for block in section.settings %}
+    .heading-{{ section.id }} {
+      color: {{ section.settings.heading_text_color }};
+    }
+    .paragraph-{{ section.id }} {
+      color: {{ section.settings.paragraph_text_color }};
+    }
+    .button-{{ section.id }} {
+      color: {{ section.settings.button_text_color }};
+      background: {{ section.settings.button_background_color }}
+    }
+  {% endfor %}}
+{% endstyle %}
+
+
+
+{% schema %}
+ {
+    "name": "ImageGallery",
+    "tag": "section",
+    "blocks": [
+      {
+        "name": "Gallery block",
+        "type": "gallery_block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "1280 x 800px image recomanded"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "image mobile",
+            "info": "400 * 900 image recomanded"
+          },
+          {
+            "type": "text",
+            "id": "heading_text",
+            "label": "Heading text",
+            "default" : "100% ORGANIC GOODNESS"
+          },
+          {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Choose heading color"
+          },
+          {
+            "type": "range",
+            "id": "heading_size",
+            "label": "Heading size",
+            "min": 32,
+            "max": 128,
+            "step": 1,
+            "default": 32
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "Buttton Text",
+            "default": "button"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }, {
+            "type": "richtext",
+            "id": "paragraph_text",
+            "label": "Description"
+          },
+          {
+          "type" : "color",
+          "id" : "description_color",
+          "label": "choose color for descriotion"
+          }
+
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "ImageGallery"
+      }
+    ]
+  }
+{% endschema %}
+
+
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

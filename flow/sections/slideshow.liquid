@@ -1,0 +1,140 @@
+{% if section.blocks.size != 0 %}
+  <div class="carousel " data-flickity='{ "autoPlay": true , "pageDots" : false,"prevNextButtons": false,"imagesLoaded": true}'>
+       {% for block in section.blocks %}
+        <div class="carousel__wrapper">
+          
+          {% if block.settings.carousel_image != blank %}
+            {% render 'image',  mobileSrc: block.settings.carousel_image, desktopSrc: block.settings.carousel_image %}
+          {% endif %}
+         
+          <div class="text-wrapper page-width grid right align-center  carousel-cell">
+            <div class="max-width ">
+              {% if block.settings.carousel_heading_text %}
+                <h1 class="header-style">{{ block.settings.carousel_heading_text }}</h1>
+              {% endif %}
+
+              {% if block.settings.description != blank %}
+              <div class= "description-style">{{ block.settings.description }}</div>
+              {%endif%}
+
+              {% if block.settings.button_url != blank and block.settings.button_text != blank  %}
+                <button class="button button_link_wrapper">
+                  <a href="{{block.settings.button_url}}">
+                    {{ block.settings.button_text }}
+                  </a>
+                </button>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+  </div>
+{% endif %}
+{% style %}
+
+  .carousel__wrapper {
+    position: relative;
+  }
+  .text-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right : 3rem; 
+    margin-top : 30%;
+  }
+  .header-style{
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color : black;
+  }
+  .max-width {
+    max-width: 700px;
+    margin-right : 4rem;
+  }
+  .description-style{
+    margin: 20px 0;
+    line-height : 1.2;
+      font-size : 2rem;
+    color : white;
+  }
+
+
+  {% for block in section.blocks %}
+    .header-style{
+      color : {{block.settings.heading_color}};
+      font-size : {{block.settings.heading_size}}px;
+    }
+  {% endfor %}
+{% endstyle %}
+
+
+        
+{% schema %}
+  {
+    "name": "Slideshow",
+    "tag": "section",
+    "blocks": [
+      {
+        "name": "Carousel",
+        "type": "Carousel_block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "carousel_image",
+            "label": "Carousel image",
+            "info": "1280 x 800px image recomanded"
+          },
+          {
+            "type": "text",
+            "id": "carousel_heading_text",
+            "label": "Heading text",
+            "default" : "100% ORGANIC GOODNESS"
+          },
+          {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Choose heading color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "range",
+            "id": "heading_size",
+            "label": "Heading size",
+            "min": 32,
+            "max": 128,
+            "step": 1,
+            "default": 32
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "Buttton Text",
+            "default": "Shop now"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url"
+          }, {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default" : "<p>Organic smoothies and cold pressed juices is our thing. Here we do things differently.</p>"
+            
+          },
+          {
+          "type" : "color",
+          "id" : "description_color",
+          "label": "choose color for descriotion"
+          }
+
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slideshow"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,87 @@
+<div class="usp container">
+  <div class="usp__wrapper flexbox">
+    {% for block in section.blocks %}
+      <div class="wrapper__container">
+        <a class="usp__url" href={{ block.settings.usp_url }}>
+          <div class="url__heading-text">{{ block.settings.heading_text }}</div>
+          <div class="url__paragraph">{{ block.settings.paragraph_text }}</div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% style %}
+  .usp{
+    background: #242424;
+  }
+  .wrapper__container{
+    width:400px;
+    padding:0 15px;
+    margin:20px 0;
+    
+    
+  }
+  .usp__url{
+    text-decoration:none;
+    color:#ffffff;
+    text-align:center;
+  }
+  .usp__wrapper{
+    justify-content:space-around;
+  }
+  .url__heading-text{
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .url__paragraph{
+    color: #d7d7d7;
+  }
+{% endstyle %}
+
+
+{% schema %}
+{
+  "name": "USP",
+  "class": "usp",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "usp_block",
+      "name": "usp block",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading_text"
+        },
+        {
+          "type": "text",
+          "label": "Paragraph",
+          "id": "paragraph_text"
+        },
+        {
+          "type": "url",
+          "label": "Url",
+          "id": "usp_url"
+        }   
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name": "USP"
+    }
+  ]
+  
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

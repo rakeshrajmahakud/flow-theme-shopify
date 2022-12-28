@@ -1,0 +1,51 @@
+{% if section.settings.announcement %}
+<div class="announcement">
+    <div class="annoncement__wrapper">{{ section.settings.message }}<div>
+</div>
+{% endif %}
+
+
+
+
+{% style %}
+  .announcement{
+    padding: 0.3rem 3rem;
+    background: #242424;
+    color: #ffffff;
+    text-align:center;
+    margin: 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+  }
+  .annoncement__wrapper{
+    max-width:60%;
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Announcement",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "announcement",
+        "label": "Announcement section"
+      },
+      {
+        "type": "richtext",
+        "id": "message",
+        "label": "Announcement Message",
+        "default": "<p>Free shipping when you spend over $50</p>"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

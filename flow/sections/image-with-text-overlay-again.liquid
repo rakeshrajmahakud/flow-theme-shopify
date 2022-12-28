@@ -1,0 +1,194 @@
+<div class="image-overlay">
+  <div class="image-overlay__image">
+    {% render 'image', class:'media media--landscape', mobileSrc: section.settings.image_mobile, desktopSrc: section.settings.image %}
+  </div>
+  <div class="image-overlay__text-container {{ section.settings.image_position }} {{ section.settings.text_alignment }}">
+    <div class="text-container__wrapper">
+      <h1 class="heading__size">{{ section.settings.heading_text }}</h1>
+      <p>{{ section.settings.paragraph_text }}</p>
+      <button class="button button--primary button__wrapper">
+        <a href="{{ section.settings.button_button_link }}">{{ section.settings.button_text }}</a>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% style %}
+.image-overlay{
+  position: relative;
+  max-width: 1440px;
+}
+
+.image-overlay__text-container{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.text-container__wrapper{
+  max-width: 400px;
+  padding: 2rem;
+}
+
+a{
+  text-decoration : none;
+  color: white;
+}
+
+.heading__size{
+  font-weight :bold;
+  font-size: {{section.settings.Heading_size}}px;
+}
+@media only screen and (min-width: 990px){
+  .image-overlay__text-container{
+    padding-left:6rem;
+  }
+}
+{%endstyle%}
+
+
+
+{% schema %}
+{
+  "name": "Image with text overlay",
+  "tag": "section",
+  "class": "homepage-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "image settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1600 X 800 .jpg (recommended)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "600 X 800 .jpg (recommended)"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Heading position",
+      "options": [
+        {
+          "value": "align-start justify-start",
+          "label": "Top Left"
+        },
+        {
+          "value": "align-start justify-center",
+          "label": "Top middle"
+        },
+        {
+          "value": "align-start justify-end",
+          "label": "Top Right"
+        },
+        {
+          "value": "align-center justify-start",
+          "label": "Middle left"
+        },
+        {
+          "value": "align-center justify-center",
+          "label": "Center"
+        },
+        {
+          "value": "align-center justify-end",
+          "label": "Middle Right"
+        },
+        {
+          "value": "align-end justify-start",
+          "label": "bottom Left"
+        },
+        {
+          "value": "align-end justify-center",
+          "label": "bottom Middle"
+        },
+        {
+          "value": "align-end justify-end",
+          "label": "bottom Right"
+        }
+        
+      ],
+      "default": "align-start justify-start"
+    },
+    {
+      "type":"header",
+      "content": "content settings"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading text",
+      "default": "heading"
+    },
+    {
+      "type": "range",
+      "id": "Heading_size",
+      "label": "Font size",
+      "min": 8,
+      "max": 64,
+      "default": 32
+    },
+    {
+      "type":"richtext",
+      "id":"paragraph_text",
+      "label":"Paragraph text",
+      "default": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>"
+    },
+    {
+      "type":"text",
+      "id":"button_text",
+      "label":"Button text",
+      "default":"Our products"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Left"
+        },
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
+        }
+      ],
+      "default": "text-left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text overlay"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,42 @@
+<div class="product-card ">
+    <div>
+        {%render 'image' ,mobileSrc : product.featured_image, desktopSrc : product.featured_image%}
+    </div>
+    <div class="product_title">
+        {{product.title}}
+    </div>
+    <div class="price-wrapper">
+        {{product.price | money}}
+    </div>
+    <button class="button button-wrapper">
+        <a class="link-wrapper">Buy Now</a>
+    </button>
+</div>
+
+{%style%}
+
+.product-card{
+    display :flex;
+    align-items:center;
+    justify-content : center;
+    flex-direction : column;
+    
+}
+.product_title{
+    color :black;
+    font-size: 1.4rem;
+}
+.price-wrapper{
+    color : black ;
+    padding:1.5rem;
+}
+.button-wrapper{
+    background : black;
+    
+}
+.link-wrapper{
+    color : white;
+}
+
+
+{%endstyle%}

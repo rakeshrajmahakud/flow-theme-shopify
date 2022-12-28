@@ -1,0 +1,219 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-skeleton",
+      "settings": {
+      }
+    },
+    "7cefd7d9-4352-4e8a-acb6-8c9af48ce549": {
+      "type": "slideshow",
+      "disabled": true,
+      "blocks": {
+        "ceca296d-dce0-4d9d-88ec-bdb3dd2d0b3b": {
+          "type": "Carousel_block",
+          "settings": {
+            "carousel_image": "shopify:\/\/shop_images\/hero_image_final.png",
+            "carousel_heading_text": "100% ORGANIC GOODNESS",
+            "heading_color": "#ffffff",
+            "heading_size": 32,
+            "button_text": "Shop now",
+            "button_url": "",
+            "description": "<p>Organic smoothies and cold pressed juices is our thing. Here we do things differently.<\/p>",
+            "description_color": ""
+          }
+        },
+        "9c43275f-35d7-4804-a80f-2c95dbcb9b90": {
+          "type": "Carousel_block",
+          "settings": {
+            "carousel_image": "shopify:\/\/shop_images\/hero_image_final.png",
+            "carousel_heading_text": "100% ORGANIC GOODNESS",
+            "heading_color": "#ffffff",
+            "heading_size": 32,
+            "button_text": "Shop now",
+            "button_url": "",
+            "description": "<p>Organic smoothies and cold pressed juices is our thing. Here we do things differently.<\/p>",
+            "description_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "ceca296d-dce0-4d9d-88ec-bdb3dd2d0b3b",
+        "9c43275f-35d7-4804-a80f-2c95dbcb9b90"
+      ],
+      "settings": {
+      }
+    },
+    "5b0f6a03-fc01-45bf-9dea-b2622d30f26b": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection_id": "best-price",
+        "product_limit": 8
+      }
+    },
+    "be9ff48e-5267-43bd-8265-bd460f2ce91c": {
+      "type": "image-with-text-overlay-again",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/beetroot_berry_parralax_right_2_600x_ba747edb-8f72-4c14-bcb2-ebf7717f9b12.webp",
+        "image_position": "align-center justify-start",
+        "heading_text": "7 DAYS. 7 SMOOTHIES.",
+        "Heading_size": 32,
+        "paragraph_text": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. <\/p>",
+        "button_text": "Our products",
+        "button_link": "",
+        "button_background_color": "",
+        "text_alignment": "text-left"
+      }
+    },
+    "d6246ada-f884-41d4-982b-f9c035e45894": {
+      "type": "logo-list",
+      "blocks": {
+        "eee8595d-b94d-4128-93b0-53c954ef31ec": {
+          "type": "Logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Asset_7.webp",
+            "image_url": "shopify:\/\/products\/spinach-spirulina"
+          }
+        },
+        "45b9a5aa-bb0b-4102-9d27-ded7888a548d": {
+          "type": "Logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Asset_6.webp",
+            "image_url": "shopify:\/\/products\/spinach-spirulina"
+          }
+        },
+        "750b6382-78f2-44a5-b8cc-991dda6d01d1": {
+          "type": "Logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Asset_4.webp",
+            "image_url": "shopify:\/\/blogs\/news\/iphone-13-features"
+          }
+        },
+        "95bc2114-6d18-4c90-ad21-26b3a0828169": {
+          "type": "Logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Asset_1.webp",
+            "image_url": "shopify:\/\/blogs\/news"
+          }
+        }
+      },
+      "block_order": [
+        "eee8595d-b94d-4128-93b0-53c954ef31ec",
+        "45b9a5aa-bb0b-4102-9d27-ded7888a548d",
+        "750b6382-78f2-44a5-b8cc-991dda6d01d1",
+        "95bc2114-6d18-4c90-ad21-26b3a0828169"
+      ],
+      "settings": {
+        "heading_text": "AS SEEN IN"
+      }
+    },
+    "460e7672-2e99-48d2-a66b-19466a20b7bd": {
+      "type": "testimonials",
+      "blocks": {
+        "63677d27-f293-4a58-89fa-b47bcebad4b7": {
+          "type": "testimonial_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/oscar-sutton-D6uPSk8VK-4-unsplash_1.jpg",
+            "rating": "5",
+            "description": "<p>Tastes great, chilled on a summer evening. But don't make the mistake of only drinking it then, this is too good for that! <\/p>",
+            "username": "dwdwdwdw"
+          }
+        },
+        "20dd0951-c43d-420d-84b6-be639fcdbd6a": {
+          "type": "testimonial_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/oscar-sutton-D6uPSk8VK-4-unsplash_1.jpg",
+            "rating": "4",
+            "description": "<p>Tastes great, chilled on a summer evening. But don't make the mistake of only drinking it then, this is too good for that! <\/p>",
+            "username": ""
+          }
+        },
+        "908e81ce-23d9-4964-b63f-660e517f3221": {
+          "type": "testimonial_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/oscar-sutton-D6uPSk8VK-4-unsplash_1.jpg",
+            "rating": "1",
+            "description": "<p>Tastes great, chilled on a summer evening. But don't make the mistake of only drinking it then, this is too good for that! <\/p>",
+            "username": ""
+          }
+        }
+      },
+      "block_order": [
+        "63677d27-f293-4a58-89fa-b47bcebad4b7",
+        "20dd0951-c43d-420d-84b6-be639fcdbd6a",
+        "908e81ce-23d9-4964-b63f-660e517f3221"
+      ],
+      "settings": {
+        "heading_text": "TESTIMONIALS"
+      }
+    },
+    "7eceb6b5-bbdf-4327-991d-c554767a20a0": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/iStock-811329498_1445x_cffd53f7-51fc-491c-9d1d-905d16047104.webp",
+        "image_position": "image-right",
+        "heading_text": "About Company",
+        "paragraph_text": "<p>We make nutritious smoothies from organically and responsibly sourced produce. We aim to use as much as we can from local sources in Australia, but if that's not possible then we will reach out across the world to sustainable suppliers!<\/p>",
+        "button_text": "Our products",
+        "button_link": "shopify:\/\/blogs\/news",
+        "text_alignment": "text-center"
+      }
+    },
+    "b9cb3bab-3cf8-4b97-800d-c9eaa74d448b": {
+      "type": "usp",
+      "blocks": {
+        "414135c3-64ff-43ea-88fd-49bd157baf9d": {
+          "type": "usp_block",
+          "settings": {
+            "heading_text": "Free Delivery Worldwide",
+            "paragraph_text": "Click here for more info",
+            "usp_url": "shopify:\/\/blogs\/news\/iphone-13-features"
+          }
+        },
+        "505bdf96-2539-4af7-a106-5737780a6418": {
+          "type": "usp_block",
+          "settings": {
+            "heading_text": "Final Clearance Sale",
+            "paragraph_text": "Up to 70% off",
+            "usp_url": "shopify:\/\/blogs\/news"
+          }
+        }
+      },
+      "block_order": [
+        "414135c3-64ff-43ea-88fd-49bd157baf9d",
+        "505bdf96-2539-4af7-a106-5737780a6418"
+      ],
+      "settings": {
+      }
+    },
+    "0ae302e1-abfb-4540-bef0-ad3691ad6ff7": {
+      "type": "richtext",
+      "settings": {
+        "section_background": "#c5c5c5",
+        "heading_text": "About Us",
+        "paragraph_text": "<p>industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum<\/p>",
+        "button_text": "Button text",
+        "button_link": "shopify:\/\/blogs\/news",
+        "button_background_color": "#d62c2c",
+        "text_alignment": "text-center"
+      }
+    },
+    "8803f6fa-ed54-4114-b92a-0f2f206354af": {
+      "type": "video-section",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "7cefd7d9-4352-4e8a-acb6-8c9af48ce549",
+    "5b0f6a03-fc01-45bf-9dea-b2622d30f26b",
+    "be9ff48e-5267-43bd-8265-bd460f2ce91c",
+    "d6246ada-f884-41d4-982b-f9c035e45894",
+    "460e7672-2e99-48d2-a66b-19466a20b7bd",
+    "7eceb6b5-bbdf-4327-991d-c554767a20a0",
+    "b9cb3bab-3cf8-4b97-800d-c9eaa74d448b",
+    "0ae302e1-abfb-4540-bef0-ad3691ad6ff7",
+    "8803f6fa-ed54-4114-b92a-0f2f206354af"
+  ]
+}

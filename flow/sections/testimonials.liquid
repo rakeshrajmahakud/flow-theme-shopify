@@ -1,0 +1,133 @@
+{% if section.blocks.size >0 %}
+  <div class="testimonial container center">
+    {% if section.settings.heading_text != blank %}
+      <div class="testimonial__hading__text">{{ section.settings.heading_text }}</div>
+    {% endif %}
+  
+    <div class="testimonial__wrapper flexbox ">
+      {%for block in section.blocks %}
+        <div class="testimonial__container center flexbox__item">
+          {% if block.settings.image != blank %}
+            <div class="testi__image__wrapper">
+              {% render 'image',class:"media media--circle", mobileSrc: block.settings.image, desktopSrc: block.settings.image %}
+            </div>
+          {% endif %}
+
+          {% if block.settings.heading_text != blank %}
+            <div>{{ block.settings.heading_text  }}</div>
+          {% endif %}
+
+          {% if block.settings.description != blank %}
+            <div class="paragraph__text">{{ block.settings.description }}</div>
+          {% endif %}
+        
+          {% if block.settings.rating != blank %}
+            {% for star in (1..block.settings.rating) %}
+              <span>⭐</span>
+            {% endfor %}
+          {% endif %}    
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+
+{% style %}
+.testimonial__hading__text{
+  margin-bottom:15px;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.testi__image__wrapper{
+  max-width:80px;
+  margin: 0 auto;
+}
+.testimonial{
+  padding:50px 0;
+}
+.testimonial__container{
+  margin: 15px;
+  max-width: 300px;
+}
+
+{%endstyle %}
+  
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "class": "testimonials",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "placeholder": "Heading",
+      "default": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial_block",
+      "name": "testimonial block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "label": "rating",
+          "options": [
+            {
+            "value": "1",
+            "label": "one"
+            },
+            {
+            "value": "2",
+            "label": "two"
+            },
+            {
+            "value": "3",
+            "label": "three"
+            },
+            {
+            "value": "4",
+            "label": "four"
+            },
+            {
+            "value": "5",
+            "label": "five"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "paragraph",
+          "default": "<p>write message here...</p>"
+        },
+        {
+          "type": "text",
+          "id": "username",
+          "label": "username",
+          "placeholder": "name/location"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% javascript %}
+{% endjavascript %}

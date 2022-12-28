@@ -1,0 +1,95 @@
+<div class="richtext richtext-{{ section.id }}">
+  <div class="container">
+    <div class="richtext__wrapper {{ section.settings.text_alignment }}">
+      {% if section.settings.heading_text != blank %}
+        <h2 class="richtext__heading">
+            {{ section.settings.heading_text }}
+        </h2>
+      {% endif %}
+      {% if section.settings.paragraph_text != black %}
+        <div class="richtext__paragraph">{{ section.settings.paragraph_text }}</div>
+      {% endif %}
+      {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+        <div class="richtext__button">
+          <a class="button button--primary" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% style %}
+  .richtext-{{ section.id }}{
+    background-color: {{ section.settings.section_background }};
+  }
+  .heading_style{
+    color: {{ section.settings.heading_color }}
+  }
+{% endstyle %}
+{% schema %}
+{
+  "name": "Richtext",
+  "tag": "section",
+  "class": "homepage-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#C5C5C5"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading text",
+      "default": "About Us"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_text",
+      "label": "Paragraph text",
+      "default": "<p>industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Left"
+        },
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
+        }
+      ],
+      "default": "text-center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Richtext"
+    }
+  ]
+}
+{% endschema %}

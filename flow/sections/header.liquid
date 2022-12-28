@@ -1,0 +1,71 @@
+<div class="navbar">
+  <div class="navbar__wrapper flexbox justify-between container">
+    
+<!--  left section -->
+      {% for link in section.settings.menu.links %}
+        <div class="menu__link__wrapper">
+          <a class="menu_links" href="{{ link.url }}">{{ link.title }}</a>
+        </div>
+      {% endfor %}
+    
+<!--  middle logo section -->
+    {% if section.settings.logo != blank %}
+      <div>
+        <a class="logo__link__wrapper" href="/">
+         {% render 'image', mobileSrc: section.settings.logo , desktopSrc: section.settings.logo %}
+        </a>
+      </div>
+    {% endif %}
+    
+<!-- right section -->
+    <div>
+      <a class="" >
+        
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+
+
+{% style %}
+.menu_links{
+  color: black;
+}
+.navbar{
+  width:100%;
+  padding:0 1rem;
+  background:transparent;
+  
+}
+.navbar:hover{
+  background: #ffffff;
+}
+.navbar__wrapper{
+
+}
+{% endstyle %}
+
+
+{% schema %}
+  {
+    "tag": "header",
+    "name": "Header",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu"
+        
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+        
+      }
+      
+    ]
+  }
+{% endschema %}

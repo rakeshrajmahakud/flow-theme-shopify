@@ -1,0 +1,129 @@
+<div class="image-text container">
+  <div class="flexbox {{ section.settings.image_position }} justify-center align-center">
+    <div class="flexbox__item">
+      <div class="image-text__image">
+        {% if section.settings.image != blank %}
+          {% render 'image', mobileSrc: section.settings.image_mobile, desktopSrc: section.settings.image %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="flexbox__item ">
+      <div class="image-text__content {{ section.settings.text_alignment }}">
+        {% if section.settings.heading_text != blank %}
+          <h2 class="image-text__heading">
+            {{ section.settings.heading_text }}
+          </h2>
+        {% endif %}
+        {% if section.settings.paragraph_text != black %}
+          <div class="image-text__paragraph">{{ section.settings.paragraph_text }}</div>
+        {% endif %}
+        {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+          <div class="image-text__button">
+            <a class="button button--primary" href="{{ section.settings.button_link }}">
+              {{- section.settings.button_text -}}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% style %}
+
+{% endstyle %}
+
+
+{% schema %}
+{
+  "name": "Image with text",
+  "tag": "section",
+  "class": "homepage-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "image settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1600 X 800 .jpg (recommended)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "600 X 800 .jpg (recommended)"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "image-left",
+          "label": "Left"
+        },
+        {
+          "value": "image-right",
+          "label": "Right"
+        }
+      ],
+      "default": "image-left"
+    },
+    {
+      "type":"header",
+      "content": "content settings"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading text",
+      "default": "WHAT WE DO"
+    },
+    {
+      "type":"richtext",
+      "id":"paragraph_text",
+      "label":"Paragraph text",
+      "default": "<p>We make nutritious smoothies from organically and responsibly sourced produce. We aim to use as much as we can from local sources in Australia, but if that's not possible then we will reach out across the world to sustainable suppliers!</p>"
+    },
+    {
+      "type":"text",
+      "id":"button_text",
+      "label":"Button text",
+      "default":"Our products"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Left"
+        },
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
+        }
+      ],
+      "default": "text-center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text"
+    }
+  ]
+}
+{% endschema %}
